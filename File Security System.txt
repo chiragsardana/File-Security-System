@@ -1,0 +1,6 @@
+File Security System: A java application where we give an existing file name as input
+and the output will be a file with unreadable code(.bin format). This application will basically secure
+the file by converting our source file into a secured file. It will also convert the secured
+file into original file when required.
+
+
