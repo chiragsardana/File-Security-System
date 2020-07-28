@@ -6,7 +6,7 @@ import java.security.SecureRandom;
 import java.util.Base64;
 public class Decryption
 {
-	public static byte[] derypt(String key, byte[] encryptedPayload) throws Exception
+	public static byte[] decrypt(String key, byte[] encryptedPayload) throws Exception
     {
         try 
         {

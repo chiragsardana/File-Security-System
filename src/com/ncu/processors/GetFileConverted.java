@@ -5,13 +5,13 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-public class GetFileConverted
+public class GetFileConverted//file\\
 {
-	public static byte[] getFileConverted(String fileName,String extension)//it converts normal file into byte array 
+	public static byte[] getFileConverted(String fileName,String extension,String depends)throws Exception//it converts normal file into byte array 
     {
     	//it contains file name and extension name...
     	//C:\Users\chira\Desktop\File Security System\file which u want to encrypt
-        File f = new File("..\\File Security System\\file\\"+fileName+""+extension);
+        File f = new File("..\\File Security System\\"+depends+fileName+"."+extension);
         InputStream is = null;
         try 
         {

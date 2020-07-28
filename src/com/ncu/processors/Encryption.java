@@ -18,7 +18,7 @@ public class Encryption
 
             SecretKeySpec skeySpec = new SecretKeySpec(key.getBytes("UTF-8"), "AES");//UTF-8 unicode transformation format 8 bit.
 
-            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
 
             cipher.init(Cipher.ENCRYPT_MODE, skeySpec,new IvParameterSpec(iv));
 
