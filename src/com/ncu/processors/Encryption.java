@@ -10,8 +10,6 @@ public class Encryption
     {
         try 
         {
-            Cipher cipher;//reference of cipher
-            byte[] encrypted = null;
 
             int ivSize = 16;//16 Byte 
             byte[] iv = new byte[ivSize];
@@ -20,11 +18,11 @@ public class Encryption
 
             SecretKeySpec skeySpec = new SecretKeySpec(key.getBytes("UTF-8"), "AES");//UTF-8 unicode transformation format 8 bit.
 
-            cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
 
             cipher.init(Cipher.ENCRYPT_MODE, skeySpec,new IvParameterSpec(iv));
 
-            encrypted = cipher.doFinal(content);//encrypted byte array contains file data in encrypted form...
+            byte[] encrypted = cipher.doFinal(content);//encrypted byte array contains file data in encrypted form...
 
             byte[] combinedPayload = new byte[iv.length + encrypted.length];//for storing iv with encrypted data
 
@@ -32,7 +30,7 @@ public class Encryption
 
             System.arraycopy(encrypted, 0, combinedPayload, iv.length, encrypted.length);
 
-            return combinedPayload;
+            return combinedPayload;// encrypted byte array...
         } 
         catch (Exception e) 
         {

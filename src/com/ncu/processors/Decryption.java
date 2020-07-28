@@ -22,7 +22,7 @@ public class Decryption
             cipher.init(Cipher.DECRYPT_MODE, skeySpec,new IvParameterSpec(iv));
             byte[] original = cipher.doFinal((encrypted));
      
-            return original;
+            return original;// return original byte array..
         } 
         catch (Exception ex) 
         {
