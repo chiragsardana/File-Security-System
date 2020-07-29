@@ -10,8 +10,10 @@ public class Main
     	MainInterface.mainInterface();
 
     	
-    	// String key = "aesEncryptionKey";
-    	// String fileName="sardana.txt";
-    	// EncryptionWorking.encryptionWorking(key,fileName);
+    	String key = "ae@1ncryptionKey";
+    	String fileName="sardana.txt";
+    	EncryptionWorking.encryptionWorking(key,fileName);
+    	fileName="sardana.bin";
+    	DecryptionWorking.decryptionWorking(key,fileName);
     }
 }
