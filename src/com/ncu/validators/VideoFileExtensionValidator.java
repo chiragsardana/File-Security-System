@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 public class VideoFileExtensionValidator
 {
-	public static boolean VideoFileExtensionValidator(String fileName)
+	public static boolean videoFileExtensionValidator(String fileName)
 	{
 		Properties prop = new Properties();
 		FileInputStream input=null;

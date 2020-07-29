@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 public class ImageFileExtensionValidator
 {
-	public static boolean ImageFileExtensionValidator(String fileName)
+	public static boolean imageFileExtensionValidator(String fileName)
 	{
 		Properties prop = new Properties();
 		FileInputStream input=null;
@@ -49,6 +49,10 @@ public class ImageFileExtensionValidator
 		else if(name[1].equals("RAW")==true || name[1].equals("raw")==true)
 		{
 
+		}
+		else if(name[1].equals("BMP")==true || name[1].equals("bmp")==true)
+		{
+			
 		}
 		else
 		{

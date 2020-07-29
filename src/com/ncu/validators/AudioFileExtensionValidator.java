@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 public class AudioFileExtensionValidator
 {
-	public static boolean AudioFileExtensionValidator(String fileName)
+	public static boolean audioFileExtensionValidator(String fileName)
 	{
 		Properties prop = new Properties();
 		FileInputStream input=null;

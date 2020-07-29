@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 public class DocumentFileExtensionValidator
 {
-	public static boolean DocumentFileExtensionValidator(String fileName)
+	public static boolean documentFileExtensionValidator(String fileName)
 	{
 		Properties prop = new Properties();
 		FileInputStream input=null;
