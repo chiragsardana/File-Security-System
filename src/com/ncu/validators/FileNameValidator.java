@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.*;
 public class FileNameValidator//i have to change the class name to NameValidator...
 {
-	public static boolean FileNameValidator(String fileName)
+	public static boolean fileNameValidator(String fileName)
 	{
 		Properties prop = new Properties();
 		FileInputStream input=null;
@@ -19,13 +19,6 @@ public class FileNameValidator//i have to change the class name to NameValidator
 			fileLength(fileName);
 			fileFormat(fileName);
 			specialCharacter(fileName);
-			fileExist(fileName);
-		}
-		catch(FileExistException e)
-		{
-			String s=prop.getProperty("FileExistExceptionMessage");
-			System.out.println(s);
-			return false;	
 		}
 		catch(EmptyFileNameException e)
 		{
@@ -108,18 +101,6 @@ public class FileNameValidator//i have to change the class name to NameValidator
 		if(namelength.length()>fileLength)
 		{
 			throw new FileLengthException("File Length Exception");
-		}
-	}
-	private static void fileExist(String fileName) throws Exception
-	{
-		File f = new File(fileName);
-		if(f.exists()==true)
-		{
-
-		}
-		else
-		{
-			throw new FileExistException("File Exist Exception");
 		}
 	}
 }

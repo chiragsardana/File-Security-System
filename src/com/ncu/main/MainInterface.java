@@ -1,6 +1,7 @@
 package com.ncu.main;
 import java.io.*;
 import com.ncu.working.*;
+import com.ncu.validators.*;
 import java.util.Scanner;
 public class MainInterface
 {
@@ -61,6 +62,7 @@ public class MainInterface
 			case 4 :
 			clearScreen();
 			encryptAudioFileInterface();
+			break;
 			case 5 :
 			clearScreen();
 			encryptDocumentFileInterface();
@@ -103,6 +105,7 @@ public class MainInterface
 			case 4 :
 			clearScreen();
 			decryptAudioFileInterface();
+			break;
 			case 5 :
 			clearScreen();
 			decryptDocumentFileInterface();
@@ -121,6 +124,9 @@ public class MainInterface
 	{
 		System.out.println("\n=======================  WELCOME TO ENCRYPT TEXT FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Text File Name : ");
+		//input.nextLine();//so that scanner goes to next line...
+		String fileName=getFileName();
+		System.out.print(fileName);
 		// String fileName=input.nextLine();//to take file name from user...
 		//now we have to check the file name type and all other things using validtors...
 		//after that u have to enter key 16 byte key i.e., 128 bit
@@ -129,46 +135,55 @@ public class MainInterface
 	{
 		System.out.println("\n=======================  WELCOME TO ENCRYPT IMAGE FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Image File Name : ");
+		getFileName();
 	}
 	public static void encryptVideoFileInterface()
 	{
 		System.out.println("\n=======================  WELCOME TO ENCRYPT VIDEO FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Video File Name : ");
+		getFileName();
 	}
 	public static void encryptAudioFileInterface()
 	{
 		System.out.println("\n=======================  WELCOME TO ENCRYPT AUDIO FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Audio File Name : ");
+		getFileName();
 	}
 	public static void encryptDocumentFileInterface()
 	{
 		System.out.println("\n=======================  WELCOME TO ENCRYPT DOCUMENT FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Document File Name : ");
+		getFileName();
 	}
 	public static void decryptTextFileInterface()
 	{
 		System.out.println("\n=======================  WELCOME TO DECRYPT TEXT FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Text File Name : ");
+		getFileName();
 	}
 	public static void decryptImageFileInterface()
 	{
 		System.out.println("\n=======================  WELCOME TO DECRYPT IMAGE FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Image File Name : ");
+		getFileName();
 	}
 	public static void decryptVideoFileInterface()
 	{
 		System.out.println("\n=======================  WELCOME TO DECRYPT VIDEO FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Video File Name : ");
+		getFileName();
 	}
 	public static void decryptAudioFileInterface()
 	{
 		System.out.println("\n=======================  WELCOME TO DECRYPT AUDIO FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Audio File Name : ");
+		getFileName();
 	}
 	public static void decryptDocumentFileInterface()
 	{
 		System.out.println("\n=======================  WELCOME TO DECRYPT DOCUMENT FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Document File Name : ");
+		getFileName();
 	}
 	static void clearScreen()//for clear screen
 	{
@@ -187,5 +202,34 @@ public class MainInterface
     	{
 
     	}
+	}
+	public static String getFileName()//for file name and check the name using FileNameValidator...
+	{
+		input.nextLine();//so that scanner goes to next line...
+		String fileName=input.nextLine();
+		Boolean checker;
+		checker=FileNameValidator.fileNameValidator(fileName);
+		if(checker==false)
+		{
+			
+			System.out.println("\n==================== You Entered Invalid File Name, Please Try Again ====================\n");
+			System.out.println(" \n                       \t\t1. To Exit Program");
+			System.out.println(" \n                  \t    Any Number Key To Go Main Menu ");
+			System.out.print("\n\nEnter Your Option : ");
+			int select=input.nextInt();
+			switch(select)
+			{
+				case 1 : 
+				System.exit(1);
+				break;
+				default :
+				clearScreen(); 
+				//=============
+				//System.out.println("\n============= You Entered Invalid Choice, Please Try Again =============\n");
+				mainInterface();
+				break;
+			}
+		}
+		return fileName;
 	}
 }
