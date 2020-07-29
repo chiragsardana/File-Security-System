@@ -1,5 +1,5 @@
 package com.ncu.validators;
-import com.ncu.exceptions.*;
+import com.ncu.exceptions.DocumentFileExtensionException;
 import java.io.*;
 import java.util.*;
 public class DocumentFileExtensionValidator
@@ -27,7 +27,7 @@ public class DocumentFileExtensionValidator
 		}
 		return true;
 	}
-	private void DocumentOnly(String fileName) throws DocumentFileExtensionException//checks whether file name conatins .txt entension or not
+	private static void DocumentOnly(String fileName) throws DocumentFileExtensionException//checks whether file name conatins .txt entension or not
 	{
 		String[] name = fileName.split("\\.");		
 		if(name[1].equals("pdf")==true || name[1].equals("PDF")==true)

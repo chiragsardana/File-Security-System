@@ -1,5 +1,5 @@
 package com.ncu.validators;
-import com.ncu.exceptions.*;
+import com.ncu.exceptions.ImageFileExtensionException;
 import java.io.*;
 import java.util.*;
 public class ImageFileExtensionValidator
@@ -27,7 +27,7 @@ public class ImageFileExtensionValidator
 		}
 		return true;
 	}
-	private void ImageOnly(String fileName) throws ImageFileExtensionException//checks whether file name conatins .txt entension or not
+	private static void ImageOnly(String fileName) throws ImageFileExtensionException//checks whether file name conatins .txt entension or not
 	{
 		String[] name = fileName.split("\\.");		
 		if(name[1].equals("jpg")==true || name[1].equals("JPG")==true)

@@ -1,5 +1,5 @@
 package com.ncu.validators;
-import com.ncu.exceptions.*;
+import com.ncu.exceptions.AudioFileExtensionException;
 import java.io.*;
 import java.util.*;
 public class AudioFileExtensionValidator
@@ -27,7 +27,7 @@ public class AudioFileExtensionValidator
 		}
 		return true;
 	}
-	private void AudioOnly(String fileName) throws AudioFileExtensionException//checks whether file name conatins .txt entension or not
+	private static void AudioOnly(String fileName) throws AudioFileExtensionException//checks whether file name conatins .txt entension or not
 	{
 		String[] name = fileName.split("\\.");		
 		if(name[1].equals("wav")==true || name[1].equals("WAV")==true)

@@ -1,9 +1,10 @@
 package com.ncu.validators;
-import com.ncu.exceptions.*;
+
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.io.*;
 import java.util.*;
+import com.ncu.exceptions.TextFileExtensionException;
 public class TextFileExtensionValidator
 {
 	public static boolean TextFileExtensionValidator(String fileName)
@@ -29,7 +30,7 @@ public class TextFileExtensionValidator
 		}
 		return true;
 	}
-	private void txtOnly(String fileName) throws TextFileExtensionException//checks whether file name conatins .txt entension or not
+	private static void txtOnly(String fileName) throws TextFileExtensionException//checks whether file name conatins .txt entension or not
 	{
 		String[] name = fileName.split("\\.");		
 		if(name[1].equals("txt")==true)

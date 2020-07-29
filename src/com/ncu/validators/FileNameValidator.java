@@ -16,9 +16,9 @@ public class FileNameValidator//i have to change the class name to NameValidator
 			prop.load(input);
 			emptyFileName(fileName);
 			missingDot(fileName);
-			fileLength(filename);
-			fileFormat(filename);
-			specialCharacter(filename);
+			fileLength(fileName);
+			fileFormat(fileName);
+			specialCharacter(fileName);
 			fileExist(fileName);
 		}
 		catch(FileExistException e)
@@ -65,12 +65,12 @@ public class FileNameValidator//i have to change the class name to NameValidator
 		}
 		return true;
 	}
-	private void emptyFileName(String filename)throws EmptyFileNameException
+	private static void emptyFileName(String fileName)throws EmptyFileNameException
 	{
-		if (filename.equals(""))
+		if (fileName.equals(""))
 			throw new EmptyFileNameException("Empty File Name Exception");
 	}
-	private void missingDot(String fileName)throws MissingExtensionException//check whether file name contains dot or not
+	private static void missingDot(String fileName)throws MissingExtensionException//check whether file name contains dot or not
 	{
 		Pattern costPattern = Pattern.compile("[.]");
 		Matcher costMatcher = costPattern.matcher(fileName);
@@ -84,7 +84,7 @@ public class FileNameValidator//i have to change the class name to NameValidator
 			throw new MissingExtensionException("Missing Extension Exception");
 		}			
 	}
-	private void fileFormat(String fileName) throws FileFormatException//checks whether file name contains extension or not
+	private static void fileFormat(String fileName) throws FileFormatException//checks whether file name contains extension or not
 	{
 		String [] extn = fileName.split("\\.");
 		if (extn.length<=1) 
@@ -92,7 +92,7 @@ public class FileNameValidator//i have to change the class name to NameValidator
 			throw new FileFormatException("File Format Exception");
 		}
 	}
-	private void specialCharacter(String fileName) throws SpecialCharacterException//checks whether file name contains special character or not
+	private static void specialCharacter(String fileName) throws SpecialCharacterException//checks whether file name contains special character or not
 	{
 		fileName = fileName.split("\\.")[0];
 		Pattern  patternGet = Pattern.compile("[@#$%^&(,)_]");
@@ -101,7 +101,7 @@ public class FileNameValidator//i have to change the class name to NameValidator
 		if (finalValue == true)
 			throw new SpecialCharacterException("Special Character Exception");
 	}
-	private void fileLength(String fileName)throws FileLengthException//check whether the length is greator than 25
+	private static void fileLength(String fileName)throws FileLengthException//check whether the length is greator than 25
 	{
 		int fileLength=25;
 		String namelength = fileName.split("\\.")[0];
@@ -110,7 +110,7 @@ public class FileNameValidator//i have to change the class name to NameValidator
 			throw new FileLengthException("File Length Exception");
 		}
 	}
-	private void fileExist(String fileName) throws Exception
+	private static void fileExist(String fileName) throws Exception
 	{
 		File f = new File(fileName);
 		if(f.exists()==true)

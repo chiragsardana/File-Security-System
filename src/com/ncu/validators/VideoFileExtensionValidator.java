@@ -1,5 +1,5 @@
 package com.ncu.validators;
-import com.ncu.exceptions.*;
+import com.ncu.exceptions.VideoFileExtensionException;
 import java.io.*;
 import java.util.*;
 public class VideoFileExtensionValidator
@@ -27,14 +27,14 @@ public class VideoFileExtensionValidator
 		}
 		return true;
 	}
-	private void ImageOnly(String fileName) throws ImageFileExtensionException//checks whether file name conatins .txt entension or not
+	private static void VideoOnly(String fileName) throws VideoFileExtensionException//checks whether file name conatins .txt entension or not
 	{
 		String[] name = fileName.split("\\.");		
-		if(name[1].equals("jpg")==true || name[1].equals("JPG")==true)
+		if(name[1].equals("webm")==true || name[1].equals("WEBM")==true)
 		{
 			
 		}
-		else if(name[1].equals("PNG")==true || name[1].equals("png")==true)
+		else if(name[1].equals("mkv")==true || name[1].equals("MKV")==true)
 		{
 
 		}
@@ -42,17 +42,17 @@ public class VideoFileExtensionValidator
 		{
 
 		}
-		else if(name[1].equals("PSD")==true || name[1].equals("psd")==true)
+		else if(name[1].equals("avi")==true || name[1].equals("AVI")==true)
 		{
 
 		}
-		else if(name[1].equals("RAW")==true || name[1].equals("raw")==true)
+		else if(name[1].equals("mp4")==true || name[1].equals("MP4")==true)
 		{
 
 		}
 		else
 		{
-			throw new ImageFileExtensionException("Image Only Exception");
+			throw new VideoFileExtensionException("Video Only Exception");
 		}
 	}
 }
