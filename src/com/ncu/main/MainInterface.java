@@ -39,8 +39,9 @@ public class MainInterface
 		System.out.println(" \n                      \t1. To Encrypt Text File ");
 		System.out.println(" \n                      \t2. To Encrypt Image File ");
 		System.out.println(" \n                      \t3. To Encrypt Video File ");
-		System.out.println(" \n                      \t4. To Encrypt Document File ");
-		System.out.println(" \n                      \t5. To Exit Program ");
+		System.out.println(" \n                      \t4. To Encrypt Audio File ");
+		System.out.println(" \n                      \t5. To Encrypt Document File ");
+		System.out.println(" \n                      \t6. To Exit Program ");
 		System.out.print("\n\nEnter Your Option : ");
 		int select=input.nextInt();
 		switch(select)
@@ -59,9 +60,12 @@ public class MainInterface
 			break;
 			case 4 :
 			clearScreen();
+			encryptAudioFileInterface();
+			case 5 :
+			clearScreen();
 			encryptDocumentFileInterface();
 			break;
-			case 5 :
+			case 6 :
 			System.exit(1);
 			break;
 			default :
@@ -77,8 +81,9 @@ public class MainInterface
 		System.out.println(" \n                      \t1. To Decrypt Text File ");
 		System.out.println(" \n                      \t2. To Decrypt Image File ");
 		System.out.println(" \n                      \t3. To Decrypt Video File ");
-		System.out.println(" \n                      \t4. To Decrypt Document File ");
-		System.out.println(" \n                      \t5. To Exit Program ");
+		System.out.println(" \n                      \t4. To Decrypt Audio File ");
+		System.out.println(" \n                      \t5. To Decrypt Document File ");
+		System.out.println(" \n                      \t6. To Exit Program ");
 		System.out.print("\n\nEnter Your Option : ");
 		int select=input.nextInt();
 		switch(select)
@@ -97,9 +102,12 @@ public class MainInterface
 			break;
 			case 4 :
 			clearScreen();
+			decryptAudioFileInterface();
+			case 5 :
+			clearScreen();
 			decryptDocumentFileInterface();
 			break;
-			case 5 :
+			case 6 :
 			System.exit(1);
 			break;
 			default :
@@ -127,6 +135,11 @@ public class MainInterface
 		System.out.println("\n=======================  WELCOME TO ENCRYPT VIDEO FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Video File Name : ");
 	}
+	public static void encryptAudioFileInterface()
+	{
+		System.out.println("\n=======================  WELCOME TO ENCRYPT AUDIO FILE INTERFACE  =======================\n ");
+		System.out.print("\nEnter Audio File Name : ");
+	}
 	public static void encryptDocumentFileInterface()
 	{
 		System.out.println("\n=======================  WELCOME TO ENCRYPT DOCUMENT FILE INTERFACE  =======================\n ");
@@ -146,6 +159,11 @@ public class MainInterface
 	{
 		System.out.println("\n=======================  WELCOME TO DECRYPT VIDEO FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Video File Name : ");
+	}
+	public static void decryptAudioFileInterface()
+	{
+		System.out.println("\n=======================  WELCOME TO DECRYPT AUDIO FILE INTERFACE  =======================\n ");
+		System.out.print("\nEnter Audio File Name : ");
 	}
 	public static void decryptDocumentFileInterface()
 	{
