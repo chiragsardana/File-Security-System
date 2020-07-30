@@ -14,7 +14,7 @@ public class SaveFile
         }
         catch(Exception e)
         {
-            System.out.println(e);
+            System.out.println("");
         }
     }
 }

@@ -125,80 +125,160 @@ public class MainInterface
 	{
 		System.out.println("\n=======================  WELCOME TO ENCRYPT TEXT FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Text File Name : ");
-		//input.nextLine();//so that scanner goes to next line...
 		String fileName=getFileName(depends_encrypt,"Text");
-		System.out.println(fileName);
+		System.out.println();
 		System.out.print("\nEnter 16 Byte/128 bit Key : ");
 		String key=getKey();
-		System.out.println(key);
+		System.out.println();
 		EncryptionWorking.encryptionWorking(key,fileName);
 		EncryptionDone();
-		// String fileName=input.nextLine();//to take file name from user...
-		//now we have to check the file name type and all other things using validtors...
-		//after that u have to enter key 16 byte key i.e., 128 bit
 	}
 	public static void encryptImageFileInterface()
 	{
 		System.out.println("\n=======================  WELCOME TO ENCRYPT IMAGE FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Image File Name : ");
 		String fileName=getFileName(depends_encrypt,"Image");
-		System.out.print(fileName);
+		System.out.println();
+		System.out.print("\nEnter 16 Byte/128 bit Key : ");
+		String key=getKey();
+		System.out.println();
+		EncryptionWorking.encryptionWorking(key,fileName);
+		EncryptionDone();
 	}
 	public static void encryptVideoFileInterface()
 	{
 		System.out.println("\n=======================  WELCOME TO ENCRYPT VIDEO FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Video File Name : ");
 		String fileName=getFileName(depends_encrypt,"Video");
-		System.out.print(fileName);
+		System.out.println();
+		System.out.print("\nEnter 16 Byte/128 bit Key : ");
+		String key=getKey();
+		System.out.println();
+		EncryptionWorking.encryptionWorking(key,fileName);
+		EncryptionDone();
 	}
 	public static void encryptAudioFileInterface()
 	{
 		System.out.println("\n=======================  WELCOME TO ENCRYPT AUDIO FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Audio File Name : ");
 		String fileName=getFileName(depends_encrypt,"Audio");
-		System.out.print(fileName);
+		System.out.println();
+		System.out.print("\nEnter 16 Byte/128 bit Key : ");
+		String key=getKey();
+		System.out.println();
+		EncryptionWorking.encryptionWorking(key,fileName);
+		EncryptionDone();
 	}
 	public static void encryptDocumentFileInterface()
 	{
 		System.out.println("\n=======================  WELCOME TO ENCRYPT DOCUMENT FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Document File Name : ");
 		String fileName=getFileName(depends_encrypt,"Document");
-		System.out.print(fileName);
+		System.out.println();
+		System.out.print("\nEnter 16 Byte/128 bit Key : ");
+		String key=getKey();
+		System.out.println();
+		EncryptionWorking.encryptionWorking(key,fileName);
+		EncryptionDone();
 	}
 	public static void decryptTextFileInterface()
 	{
+		boolean execute;
 		System.out.println("\n=======================  WELCOME TO DECRYPT TEXT FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Text File Name : ");
 		String fileName=getFileName(depends_decrypt,"bin");
-		System.out.print(fileName);
+		System.out.print("\nEnter Key : ");
+		String key=input.next();
+		System.out.println();
+		execute=DecryptionWorking.decryptionWorking(key,fileName,"Text");
+		if(execute==true)
+		{
+			DecryptionDone();
+		}
+		else
+		{
+			exitMain();
+		}
 	}
 	public static void decryptImageFileInterface()
 	{
+		boolean execute;
 		System.out.println("\n=======================  WELCOME TO DECRYPT IMAGE FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Image File Name : ");
 		String fileName=getFileName(depends_decrypt,"bin");
-		System.out.print(fileName);
+		System.out.println();
+		System.out.print("\nEnter Key : ");
+		String key=input.next();
+		System.out.println();
+		execute=DecryptionWorking.decryptionWorking(key,fileName,"Image");
+		if(execute==true)
+		{
+			DecryptionDone();
+		}
+		else
+		{
+			exitMain();
+		}
 	}
 	public static void decryptVideoFileInterface()
 	{
+		boolean execute;
 		System.out.println("\n=======================  WELCOME TO DECRYPT VIDEO FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Video File Name : ");
 		String fileName=getFileName(depends_decrypt,"bin");
-		System.out.print(fileName);
+		System.out.println();
+		System.out.print("\nEnter Key : ");
+		String key=input.next();
+		System.out.println();
+		execute=DecryptionWorking.decryptionWorking(key,fileName,"Video");
+		if(execute==true)
+		{
+			DecryptionDone();
+		}
+		else
+		{
+			exitMain();
+		}
 	}
 	public static void decryptAudioFileInterface()
 	{
+		boolean execute;
 		System.out.println("\n=======================  WELCOME TO DECRYPT AUDIO FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Audio File Name : ");
 		String fileName=getFileName(depends_decrypt,"bin");
-		System.out.print(fileName);
+		System.out.println();
+		System.out.print("\nEnter Key : ");
+		String key=input.next();
+		System.out.println();
+		execute=DecryptionWorking.decryptionWorking(key,fileName,"Audio");
+		if(execute==true)
+		{
+			DecryptionDone();
+		}
+		else
+		{
+			exitMain();
+		}
 	}
 	public static void decryptDocumentFileInterface()
 	{
+		boolean execute;
 		System.out.println("\n=======================  WELCOME TO DECRYPT DOCUMENT FILE INTERFACE  =======================\n ");
 		System.out.print("\nEnter Document File Name : ");
 		String fileName=getFileName(depends_decrypt,"bin");
-		System.out.print(fileName);
+		System.out.println();
+		System.out.print("\nEnter Key : ");
+		String key=input.next();
+		System.out.println();
+		execute=DecryptionWorking.decryptionWorking(key,fileName,"Document");
+		if(execute==true)
+		{
+			DecryptionDone();
+		}
+		else
+		{
+			exitMain();
+		}
 	}
 	static void clearScreen()//for clear screen
 	{
@@ -356,6 +436,23 @@ public class MainInterface
 	{
 		System.out.println("\n============================= Decryption Done Succesfully  =============================\n");
 		System.out.println(" \n                       \t\t1. To Exit Program");                                   
+		System.out.println(" \n                  \t    Any Number Key To Go Main Menu ");
+		System.out.print("\n\nEnter Your Option : ");
+		int select=input.nextInt();
+		switch(select)
+		{
+			case 1 : 
+			System.exit(1);
+			break;
+			default :
+			clearScreen(); 
+			mainInterface();
+			break;
+		}
+	}
+	public static void exitMain()
+	{
+		System.out.println(" \n                       \t\t1. To Exit Program");
 		System.out.println(" \n                  \t    Any Number Key To Go Main Menu ");
 		System.out.print("\n\nEnter Your Option : ");
 		int select=input.nextInt();

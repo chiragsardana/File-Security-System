@@ -26,7 +26,7 @@ public class Decryption
         } 
         catch (Exception ex) 
         {
-            ex.printStackTrace();
+            System.out.println("Oops... You have entered Wrong Key...Please Try Again");
         }
         return null;
     }

@@ -19,7 +19,7 @@ public class GetFileConverted//file\\
         } 
         catch (FileNotFoundException e2) 
         {
-            e2.printStackTrace();
+            System.out.print("");
         }
         byte[] content = null;
         try 
@@ -28,7 +28,7 @@ public class GetFileConverted//file\\
         } 
         catch (IOException e1) 
         {
-            e1.printStackTrace();
+            System.out.print("");
         }
         try 
         {
@@ -37,7 +37,7 @@ public class GetFileConverted//file\\
         } 
         catch (IOException e) 
         {
-            e.printStackTrace();
+            System.out.print("");
         }
 
         return content;
