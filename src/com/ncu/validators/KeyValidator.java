@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.*;
 public class KeyValidator
 {
-	public static boolean KeyValidator(String key)throws Exception
+	public static boolean keyValidator(String key)
 	{
 		Properties prop = new Properties();
 		FileInputStream input=null;
