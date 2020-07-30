@@ -6,7 +6,7 @@ import java.security.SecureRandom;
 import java.util.Base64;
 public class Encryption
 {
-	public static byte[] encrypt(String key, byte[] content)throws Exception//here we are taking 128 bit key as string...
+	public static byte[] encrypt(String key, byte[] content)//here we are taking 128 bit key as string...
     {
         try 
         {

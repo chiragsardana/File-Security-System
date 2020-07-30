@@ -128,9 +128,11 @@ public class MainInterface
 		//input.nextLine();//so that scanner goes to next line...
 		String fileName=getFileName(depends_encrypt,"Text");
 		System.out.println(fileName);
-		System.out.print("\nEnter 16 Byte Key : ");
+		System.out.print("\nEnter 16 Byte/128 bit Key : ");
 		String key=getKey();
 		System.out.println(key);
+		EncryptionWorking.encryptionWorking(key,fileName);
+		EncryptionDone();
 		// String fileName=input.nextLine();//to take file name from user...
 		//now we have to check the file name type and all other things using validtors...
 		//after that u have to enter key 16 byte key i.e., 128 bit
@@ -331,5 +333,41 @@ public class MainInterface
 			}
 		}
 		return key;
+	}
+	public static void EncryptionDone()
+	{
+		System.out.println("\n============================= Encryption Done Succesfully  =============================\n");
+		System.out.println(" \n                       \t\t1. To Exit Program");                                   
+		System.out.println(" \n                  \t    Any Number Key To Go Main Menu ");
+		System.out.print("\n\nEnter Your Option : ");
+		int select=input.nextInt();
+		switch(select)
+		{
+			case 1 : 
+			System.exit(1);
+			break;
+			default :
+			clearScreen(); 
+			mainInterface();
+			break;
+		}
+	}
+	public static void DecryptionDone()
+	{
+		System.out.println("\n============================= Decryption Done Succesfully  =============================\n");
+		System.out.println(" \n                       \t\t1. To Exit Program");                                   
+		System.out.println(" \n                  \t    Any Number Key To Go Main Menu ");
+		System.out.print("\n\nEnter Your Option : ");
+		int select=input.nextInt();
+		switch(select)
+		{
+			case 1 : 
+			System.exit(1);
+			break;
+			default :
+			clearScreen(); 
+			mainInterface();
+			break;
+		}
 	}
 }

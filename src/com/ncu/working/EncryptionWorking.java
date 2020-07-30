@@ -2,7 +2,7 @@ package com.ncu.working;
 import com.ncu.processors.*;
 public class EncryptionWorking
 {
-	public static void encryptionWorking(String key,String fileName)throws Exception
+	public static void encryptionWorking(String key,String fileName)
 	{
 		String[] words=fileName.split("[.]");
 		String extension=words[1];

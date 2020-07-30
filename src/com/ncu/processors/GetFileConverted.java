@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 public class GetFileConverted//file\\
 {
-	public static byte[] getFileConverted(String fileName,String extension,String depends)throws Exception//it converts normal file into byte array 
+	public static byte[] getFileConverted(String fileName,String extension,String depends)//it converts normal file into byte array 
     {
     	//it contains file name and extension name...
     	//C:\Users\chira\Desktop\File Security System\file which u want to encrypt
