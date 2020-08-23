@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.io.*;
 import java.util.*;
-public class FileNameValidator//i have to change the class name to NameValidator...
+public class FileNameValidator//its validates the name of a file...
 {
 	public static boolean fileNameValidator(String fileName)
 	{

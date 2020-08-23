@@ -1,10 +1,5 @@
 package com.ncu.processors;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 public class GetFileConverted//file\\
 {
 	public static byte[] getFileConverted(String fileName,String extension,String depends)//it converts normal file into byte array 
@@ -24,9 +19,9 @@ public class GetFileConverted//file\\
         byte[] content = null;
         try 
         {
-            content = new byte[is.available()];
+            content = new byte[(int)f.length()];//content = new byte[is.available()];
         } 
-        catch (IOException e1) 
+        catch (Exception e1) 
         {
             System.out.print("");
         }
@@ -39,7 +34,14 @@ public class GetFileConverted//file\\
         {
             System.out.print("");
         }
-
+        try
+        {
+        	is.close();
+        }
+        catch(Exception e)
+        {
+        	System.out.println(e);
+        }
         return content;
     }
 }
